@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue example watch</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">{{ fullName }}</div>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          firstName: 'Perlou1',
+          lastName: 'Perlou2',
+          fullName: 'Perlou3'
+        },
+        watch: {
+          firstName: function (val) {
+            this.fullName = val + ' ' + this.lastName
+          },
+          lastName: function (val) {
+            this.fullName = this.firstName + ' ' + val
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

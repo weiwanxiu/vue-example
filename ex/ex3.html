@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue example 计算属性</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <p>{{message}}</p>
+      <p>{{reverseMessage}}</p>
+    </div>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Perlou'
+        },
+        computed: {
+          reverseMessage: function () {
+            return this.message.split('').reverse().join('')
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
