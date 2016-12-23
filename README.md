@@ -1,2 +1,2 @@
-# vue-todomvc
-A todomvc demo
+# vue-example
+vue-example

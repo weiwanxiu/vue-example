@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue example</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <todo-item
+          v-for="item in list"
+          v-bind:todo="item"
+        ></todo-item>
+      </ul>
+    </div>
+<!-- 
+    <div id="app2">
+      <app-nav></app-nav>
+      <app-view>
+        <app-sidebar></app-sidebar>
+        <app-content></app-content>
+      </app-view>
+    </div> -->
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script>
+      Vue.component('todo-item', {
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+      });
+
+      var app = new Vue({
+        el: '#app',
+        data: {
+          list: [
+            {
+              text: 'perlou1',
+            },
+            {
+              text: 'perlou2',
+            },
+            {
+              text: 'perlou3'
+            }
+          ]
+        }
+      })
+    </script>
+  </body>
+</html>
